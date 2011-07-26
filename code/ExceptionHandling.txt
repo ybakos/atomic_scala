@@ -1,0 +1,30 @@
+1   // code/ExceptionHandling.scala
+2   
+3   import com.atomicscala.AtomicTest._
+4   
+5   def readLinesFromFile(filename : String) {
+6   
+7   
+8   	try {
+9   		val file = new java.io.File(filename)
+10  		val lines = scala.io.Source.fromFile(file).getLines
+11  		lines.length is 10
+12  	}
+13  	catch {
+14  		case ex : java.io.FileNotFoundException => println("Couldn't open file " + filename)
+15  
+16  	}
+17  	finally {
+18  		println("the file was " + filename)
+19  	}
+20  }
+21  
+22  readLinesFromFile("NonExistentFile")
+23  readLinesFromFile("testfile.txt")
+24  
+25  /* Output:
+26  Couldn't open file NonExistentFile
+27  the file was NonExistentFile
+28  10
+29  the file was testfile.txt
+30  */

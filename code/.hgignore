@@ -1,0 +1,11 @@
+lib_managed
+project/boot
+project/build/target
+target
+.*\.DS_Store
+.*\.zip
+.idea*
+.classpath
+.project
+*\.txt
+*\.out
