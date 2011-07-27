@@ -7,3 +7,15 @@ case class Bicycle(riders: Int) {
 
 val forTwo = Bicycle(2)
 forTwo is "Bicycle built for 2"
+
+case class Cycle(wheels: Int) {
+	override def toString = {
+		wheels match {
+			case 1 => "Unicycle"
+			case 2 => "Bicycle"
+			case 3 => "Tricycle"
+			case 4 => "Quadricycle"
+			case _ => "Cycle with " + wheels + " wheels"
+		}
+	}
+}
